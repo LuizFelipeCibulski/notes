@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trusted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: untrusted
+---
+## Pod Backend
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: backend
+    role: backend
+  name: backend
+spec:
+  containers:
+  - image: nginx
+    name: backend
+    ports:
+    - containerPort: 80
+  restartPolicy: Always
+---
+## Pod trusted
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: trusted
+    role: trusted
+  name: trusted
+  namespace: trusted 
+spec:
+  containers:
+  - image: nginx
+    name: trusted
+  restartPolicy: Always
+---
+## Pod trusted
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: untrusted
+    role: untrusted
+  name: untrusted
+  namespace: untrusted 
+spec:
+  containers:
+  - image: nginx
+    name: untrusted
+  restartPolicy: Always
+---
+## Network policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-specific-namespace
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: backend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: trusted
+  egress:
+  - {}

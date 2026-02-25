@@ -1,0 +1,123 @@
+#Use Network security policies to restrict cluster level access
+
+Network policies controlam o trafico entre pods no kubernetes. Definindo esseas policies, você pode limitar qual pod pode comunicar com outro ou servicos externos.
+Exemplo:
+```
+## Network policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-specific-namespace
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: backend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: trusted
+  egress:
+  - {}
+```
+
+Nessa network police os pods com labels, role: backend só poderam aceitar trafego de entrada dos pods da namespace: trusted
+
+O arquivo 1-exemple.yaml tem um conjunto de objetos que vamos utilizar para entender melhor essa comunicação.
+```
+$ k apply -f 1-example.yaml
+```
+
+Para validar a comunicação interna do pod backend:
+```
+$ k exec -it backend -- curl 127.0.0.1
+```
+
+Resultado esperado: 
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+Agora vamos testar do pod untrusted:
+
+Vamos pegar o fqdn do pod backend
+```
+$ k get po -o wide
+```
+
+FQDN é composto do ip do pod separado por -, seguido do namespace, .pod e o nome do cluster. No meu caso:
+```
+10-233-119-32.default.pod.cluster.local
+```
+
+Validando a conexão: 
+```
+$ k exec -it -n untrusted untrusted -- curl 10-233-119-32.default.pod.cluster.local
+```
+
+Resultado esperado: 
+```
+curl: (28) Failed to connect to 10-233-119-32.default.pod.cluster.local port 80 after 132741 ms: Could not connect to server
+command terminated with exit code 28
+```
+
+Agora testando do pod trusted: 
+```
+$ k exec -it -n trusted trusted -- curl 10-233-119-32.default.pod.cluster.local
+```
+Resultado esperado: 
+```
+k exec -it -n trusted trusted -- curl 10-233-119-32.default.pod.cluster.local
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+
+
