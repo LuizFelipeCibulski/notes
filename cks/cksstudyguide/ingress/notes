@@ -1,0 +1,39 @@
+** Creating and Ingress with TLS Termination ** 
+* Ingress faz a rota entre HTTP e ou HTTPs trafego de fora do cluster para um ou mais de um serviço baseado em uma URL ou contexto
+* Na prova CKS o foco é configurar o ingress com objetos TLS.
+* No exemplo, está rodando uma aplicação simples. O foco é a criação de um ingress com TLS
+* Para iniciar nós vamos precisar gerar um certificado TLS e uma key antes de criar uma secret TLS 
+```
+$ openssl req -nodes -new -x509 -keyout accounting.key -out accounting.crt -subj "/CN=accounting.tls"
+```
+
+```
+$ kubectl create secret tls accounting-secret --cert=accounting.crt --key=accounting.key -n t75
+```
+* Após aplicar o ingress de exemplo, é possivel validado na namespace t75
+* Descrevendo o ingress tem que ter algo do tipo: 
+```
+Name:             accounting-ingress
+Labels:           <none>
+Namespace:        t75
+Address:          
+Ingress Class:    <none>
+Default backend:  <default>
+TLS:
+  accounting-secret terminates accounting.internal.acme.com
+Rules:
+  Host                          Path  Backends
+  ----                          ----  --------
+  accounting.internal.acme.com  
+                                /   accounting-service:80 (10.233.119.38:80,10.233.119.40:80,10.233.119.39:80)
+Annotations:                    <none>
+Events:                         <none>
+```
+
+** Chamando o ingress
+* É preciso configurar no /etc/hosts o DNS 'accounting.internal.acme.com' para o ip do master do cluster
+* Depois disso podemos testar utilizando:
+```
+$ wget -O- https://accounting.internal.acme.com --no-check-certificate
+```
+
