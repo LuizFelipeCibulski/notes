@@ -1,8 +1,0 @@
-** Usando network policies para restringir comunicação pod-to-pod **
-
-* O k8s endereça um ip mutavel e não pode ser considerado estavel 
-* É recomendado utilizar pod-to-service ao inves de pod-to-pod para uma conexão estavel
-* Por padrão pods podem se comunicar com qualquer outro pod independete do node
-* Network policies funcionam similar a uma regra de firewall, porém para pod-to-pod
-* As network policies controlam a direção do trafego (ingress e egress), dentro da mesma ou diferente namespace assim como as portas de destino.
-

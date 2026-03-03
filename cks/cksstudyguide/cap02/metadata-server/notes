@@ -1,0 +1,6 @@
+*** Proteção de metadata e endpoints *** 
+* Kube API server uses the port 6443 por padrão para comunicação com o kubectl por exemplo
+* é possivel mudar a porta do api server passando a flag --secure-port no arquivo /etc/kubernetes/manifests/kube-apiserver.yaml
+* Para os demais componetes, as possibilidades devem ser consultadas na documentação 
+* Utilização de firewall rules é uma possibilidade para diminuir a superfice de ataque
+* Assim que o exemplo for criado, pods do namespace a12 não vão poder acessar os endpoints
