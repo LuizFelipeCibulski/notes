@@ -1,0 +1,20 @@
+*** Resumo ***
+
+* No topico cluster setup, mesmo seguindo a criação do cluster utilizando o kubeadm não quer dizer que vai ser feita da forma mais segura
+* É uma boa pratica utilizar o kube-bench para detectar potenciais riscos de segurança
+* Fazer também a conferencia dos binarios dos componentes do kubernetes
+* Outro ponto importante é a network, Pod-to-Pod não tem restrição por padrão.
+* Tomar como padrão realizar a configuração de comunicação entre os pods somente que precisam se comunicar, nas portas corretas também.
+* Se a aplicação tiver um ingress, validar se está utilizando SSL
+** Essenciais para o exame **
+* Entender para que serve e a função das network policies
+    * Por padrão todos os pods podem se comunicar sem restrição, criar uma policy que faça deny de tudo
+    * Liberar somente a comunicação entre os pods que precisam dos mesmos
+* Praticar a utilização do kube-bench para detecção de vulnerabilidades no cluster
+    * Gerar um report, como resolver possiveis falhas e interpretar os resultados.
+* Ingress com TLS
+    * Configurar um ingress com uma tls secret 
+* Saber como configurar elementos da GUI para um acesso seguro
+    * Como configurar RBAC, e acessos ao cluster e api
+* Saber como identificar modificações nos binarios
+    * kubectl e kubeadm podem ser verificados pelos hash code correspondentes. 
