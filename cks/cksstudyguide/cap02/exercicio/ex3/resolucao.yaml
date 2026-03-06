@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: backend
+  name: denied
+spec:
+  containers:
+  - image: busybox:1.36.0
+    name: allowed
+    command:
+      - sh
+      - -c
+      - wget http://google.com
+    ports:
+    - containerPort: 80

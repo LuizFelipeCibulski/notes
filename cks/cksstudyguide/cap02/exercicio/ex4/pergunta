@@ -1,0 +1,11 @@
+* Instale o Painel do Kubernetes ou certifique-se de que ele já esteja instalado. No namespace kubernetes-dashboard, crie uma ServiceAccount chamada observer-user.
+Além disso, crie o ClusterRole e o ClusterRoleBinding correspondentes.
+A ServiceAccount deve ter permissão apenas para visualizar Deployments. Todas as outras
+operações devem ser negadas. Como exemplo, crie o Deployment chamado deploy no namespace padrão com o seguinte comando: kubectl create deploy --image=nginx --replicas=3
+
+
+
+* Crie um token para a ServiceAccount chamada observer-user que nunca expirará. Faça login no Painel usando o token. Certifique-se de que somente as Implantações
+possam ser visualizadas e nenhum outro tipo de recurso.
+
+ k create token oberserver-user --duration 0s -n kubernetes-dashboard

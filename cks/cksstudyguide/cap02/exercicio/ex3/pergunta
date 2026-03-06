@@ -1,0 +1,1 @@
+* Crie outro Pod chamado denied que execute a imagem busybox:1.36.0 na porta 80 e atribua a ele o rótulo app=backend. Faça uma chamada curl para http://google.com a chamada de rede deve ser bloqueada.

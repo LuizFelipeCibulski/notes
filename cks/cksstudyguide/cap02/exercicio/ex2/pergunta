@@ -1,0 +1,2 @@
+* Crie um Pod chamado allowed que execute a imagem busybox:1.36.0 na porta 80 e atribua a ele o rótulo app=frontend. Faça uma chamada curl para http://google.com.
+A chamada de rede deve ser permitida, pois a política de rede não se aplica ao Pod.

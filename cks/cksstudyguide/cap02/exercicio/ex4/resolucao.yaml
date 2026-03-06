@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: oberserver-user
+  namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: oberserver-user
+  namespace: kubernetes-dashboard
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: oberserver-user
+subjects:
+# You can specify more than one "subject"
+- kind: ServiceAccount
+  name: oberserver-user
+  namespace: kubernetes-dashboard
+roleRef:
+  kind: ClusterRole
+  name: oberserver-user
+  apiGroup: rbac.authorization.k8s.io
+---

@@ -1,0 +1,2 @@
+** Exercicios simples **
+* Crie uma política de rede que negue o tráfego de saída para qualquer domínio fora do cluster. A política de rede se aplica aos Pods com o rótulo app=backend e também permite o tráfego de saída para a porta 53 para UDP e TCP para Pods em qualquer outro namespace.
