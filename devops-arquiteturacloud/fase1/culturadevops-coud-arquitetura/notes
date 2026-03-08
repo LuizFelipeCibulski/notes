@@ -1,0 +1,12 @@
+* Pilares do modulo
+* Cultura DevOps
+* Arquitetura Cloud
+* Arquitetura de Aplicações 
+* AWS 
+
+* Cultura DevOps: É mais que apenas ferramentas, é uma filosofia que busca integrar as equipes de desenvolvimento (DEV)
+e operações (OPS). Colaboração, comunicação e a busca pela automação são cruciais para quebrar silos, e acelerar a entrega de software garantindo a qualidade contínua dos projetos
+
+* Arquitetura Cloud: Entender os modelos entregues pelo mercado, SaaS, PaaS, e IaaS
+
+* Arquitetura de Aplicações: Contruir sistema monilpitico, onde a aplicação funciona como um bloco único, ou adotar microsserviços, decompondo a solução em partes menores e independentes
