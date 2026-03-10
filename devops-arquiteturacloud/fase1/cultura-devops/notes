@@ -159,3 +159,42 @@ Cultrura DevOps
                                 -> Prática em projetos open-source
 
      
+*** Práticas comuns e ferramentas ***
+
+IAC - Infraestrtutura como código 
+  -> Infraestrutura descrita em arquivos versionáveis
+  -> Ambientes reproduzíveis e auditáveis
+  -> Ferramentas: Terraform, CloudFormation, Pulumi, Ansible;
+  -> Boas práticas: Git, PRs, testes (dry-runs)
+
+CI - Integração contínua 
+  -> Cada commit aciona builds e testes automatizados;
+  -> Feedback rápido e redução de bugs;
+  -> Ferramentas: Jenkins, Github Actions, GitLab CI
+
+CD - Entrega contínua
+  -> Pipeline leva o artefato à produção com segurança
+  -> Testes de integração, carga e segurança
+  -> Deployments: blue-green, canary releases
+
+Conteinerização
+  -> Leveza, startup rápido e imagens imutáveis;
+  -> Facilidade de versionamento e rollback;
+  -> Principal ferramenta: Docker;
+
+Orquestração com Kubernetes
+  -> Gerencia containers em larga escala
+  -> escalabilidade e tolerância a falhas;
+  -> Pods, deployments, services e manifests YAMLS
+  -> Integração com CI/CD e GitOps
+
+Monitoramento e feedback contínuo 
+  -> Métricas, logs e tracing distribuído;
+  -> Ferramentas: Prometheus, Grafana, ELK
+  -> Criação de alertas;
+  -> Dashboards para antecipar falhas;
+
+Resumo do ciclo DevOps
+  IaC -> CI/CD -> Segurança -> Containers -> Monitoramento
+  Automação, colaboração e aprendizado contínuo
+
