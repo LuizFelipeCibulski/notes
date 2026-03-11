@@ -198,3 +198,127 @@ Resumo do ciclo DevOps
   IaC -> CI/CD -> Segurança -> Containers -> Monitoramento
   Automação, colaboração e aprendizado contínuo
 
+Blue-green -> Dois ambientes idênticos coexistem: um executando a versão atual, outro preparado para receber a nova iteração. Basta redirecionar o tráfego de forma controlada para validar a estabilidade 
+da atualização 
+Canary Release -> Código é lançado apenas para um pequeno percentual de usuários, observando-se indicadores de desempenho e experiência antes de expandir a distribuição;
+ricções que podem comprometer a experiência do usuário. 
+
+Acordo entre equipes SLOs (Service LevelObjectives) e SLIs (Service LevelIndicators)
+
+*** Cultura Organizacional ***
+
+A cultura como 'sistema operaciona invisível'
+Cultura organizacional além das ferramentas;
+Mudança de mentalidade profunda
+
+** Importância da cultura no Devops
+
+DevOps como transformação cultural 
+Colaboração vs. Silos
+Confiança como base para sucesso
+
+** Mudança cultural no Devops
+
+Desconstruindo silos
+Integração de desenvolvedores, operações, QA e segurança
+Compartilhamento de responsabilidades
+
+** Incidentes e aprendizado contínuo 
+
+Abordagem sem culpa 
+Post-mortems construtivos
+Transformação de falhas em aprendizado
+
+Espírito de experimentação segura
+  Pequenos testes -> Inovação em escala controlada
+Ciclos de feedback rápido
+  Validação continua das hipóteses
+Autossustentabilidade
+  Processo se retroalimenta com melhorias
+
+Foco no valor entregue
+  Estabilidade dos sistemas
+  Velocidade na entrega de funcionalidades
+  Experiência do usuário como métricas
+
+O papel das métricas
+  Métricas alinhadas ao valor real
+  Alertas e Retrospectivas
+  Indicadores que impulsionam resultados
+
+Cultura organizacional como DNA 
+  Valores, crenças, normas e rituais
+  Histoória da organização
+  Identidade cultural moldando comportamentos
+
+Cultura e liderança
+  Influência da liderança
+  Modelagem de comportamentos
+  Engajamento e confiança
+
+Políticas e práticas de RH 
+  Feedback contínuo
+  Reconhecimento e celebração
+  Planos de carreira alinhados
+
+Símbolos e cerimônias 
+  Pontos de convergênciia emocional
+  Exemplos práticos: hackathons, reuniões, cafés
+  Fortalecimento da identidade organizacional
+
+Tipos de cultura organizacional 
+  CLÃ -> Pertencimento e aprendizado coletivo 
+  ADHOCRÁTICA -> Inovação e flexibilidade
+  HIERÁRQUICA -> Controle e previsibilidade
+  MERCADO -> Desempenho e competição
+
+Cultura CLÃ no DevOps 
+  Foco em relações humanas
+  Tratamento dos erros como aprendizado
+  Ambiente colaborativo e acolhedor
+
+Cultura ADHOCRÁTICA no DevOps
+  Inovação e mudanças rápidas
+  Riscos calculados
+  Hierarquias fluídas
+
+Cultura de mercado no DevOps
+  Obsessão por resultados
+  Metas agressivas
+  Concorrência interna 
+
+Cultura Hierárquica no DevOps
+  Processos padronizados
+  Cadeia de comando clara
+  Previsibilidade e Controle
+
+Receptividade ao devops
+  Clã e Adhocrática como aceleradoras
+  Mercado e Hierárquica como barreiras
+  Estratégias para cada cultura
+
+Desafios da transformação cultural 
+  Resistência à mudança
+  Alinhamento contínuo de Metas
+  Comunicação clara e objetiva
+
+Curva de Aprendizado 
+  Novas ferramentas e automações
+  Padronização sem tolher inovação
+  Treinamentos contínuo
+
+Segurança como parte integrante 
+  DevSecOps
+  Identificação precoce de vulnerabilidades
+  Segurança como parte do fluxo
+
+Como iniciar a implementação 
+  Autoavaliação e mapeamento
+  Projetos-piloto
+  Automação gradual
+
+Sustentando a transformação
+  Feedback contínuo
+  Educação constante
+  Celebração e compartilhamento de aprendizado
+
