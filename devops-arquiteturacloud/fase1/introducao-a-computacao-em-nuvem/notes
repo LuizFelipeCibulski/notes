@@ -1,0 +1,95 @@
+O que é computação em nuvem?
+
+Recursos sob demanda
+    Capacidade de solicitar e liberar recursos conforme necessidade
+
+Acesso via internet
+    Qualqer dispositivo conectado pode acessar os serviços 
+
+Flexibilidade
+    Escalabilidade instantânea para atnder picos de demanda
+
+TI Tradicional                 VS.    Computação em nuvem 
+CapEx (Despesas de Capital)           OpEx (Despesas Operacionais)
+Escalabilidade limitada               Escalabilidade elástica
+Manutenção própria                    Gerenciada pelo provedor
+Semanas ou meses                      Minutos ou horas
+
+Modelos de serviço em nuvem 
+
+IAAS (Infraestruta como serviço)
+Controle total sobre SO e aplicações
+Ex: AWS EC2
+
+PAAS (Plataforma como serviço)
+Foco no desenvolvimento, plataforma Gerenciada
+Ex: Google App Engine
+
+SAAS (Software como serviço)
+Software pronto para uso
+Ex: Office 365, Salesforce
+
+Modelos de implantação em nuvem
+
+Nuvem pública
+    Infraestrtura disponibilizada para uso aberto pelo público em geral
+
+Nuvem privada
+    Infraestrtura provisionada para uso exlusivo por uma única organização
+
+Nuvem híbrida
+    Composição de duas ou mais infraestruturas distintas (privada, pública)
+
+Requisitos para adoção de nuvem
+    01 Liderança
+    Patrocínio hierárquico e colaboração multifuncional.
+
+    02 Aprendizagem
+    Melhora da habilidades da equipe de TI, conhecimento compartilhado.
+
+    03 Escalabilidade
+    Abstração da infraestrutura e serviços serverless
+
+    04 Segurança 
+    Controle de acesso e proteção de dados
+
+Benefícios da nuvem:
+    Agilidade, disponibilidade e alcance global 
+    
+    01 Agilidade, Resposta rápida a mudanças
+
+    02 Alta Disponibilidade (HA)
+    Serviço operacional sem tempo de inatividade
+
+    03 Recuperação de Desastres (DR)
+    Minimiza perda de dados em falhas
+
+    04 Alcance global 
+    Recursos próximos aos clientes em qualquer lugar.
+
+Escalabilidade e elasticidade
+
+Escalabilidade Vertical 
+    Aprimorar recursos de um único nó
+
+Escalabilidade Horizontal
+    Adicionar mais nós para aumentar a Capacidade
+
+Elasticidade 
+    Ajuste automático de recursos à demanda
+
+Otimização de custos:
+    Opex vs Capex 
+
+Capex (Despesas de Capital)
+    Grandes investimetos iniciais
+    Ativos fixos
+    Depreciação ao longo do tempo
+    Manutenção própria
+
+Opex (Despesas operacionais)
+    Custos contínuos por uso/assinatura
+    Dedução integral no ano 
+    Maior flexibilidade orçamentária;
+    Manutenção do provedor
+
