@@ -93,3 +93,86 @@ Opex (Despesas operacionais)
     Maior flexibilidade orçamentária;
     Manutenção do provedor
 
+*** Modelos de serviços: Iaas, Paas, Saas e Faas ***
+
+IaaS - Alto controle, menor abstração 
+PaaS - Foco no desenvolvimento
+SaaS - Pronto para uso, alta abstração
+FaaS - Orientado a eventos, sem servidor
+
+IaaS - Infraestrtura como Serviço
+    01 Recursos virtuais
+    Servidores, armazenamento, redes;
+    Sem infraestrtura física.
+
+    02 Alto Controle
+    Gerencia SO, apps, dados;
+    Flexibilidade máxima
+
+    03 Vantagens
+    Escalabilidade
+
+PaaS Plataforma como serviço
+    Desenvolvimento 
+    Ferramentas colaborativas e controle de versão
+
+    Implantação 
+    Gerencia SO, apps, dados. Flexibilidade máxima
+
+    Manutenção
+    Escalabilidade sob demanda. Redução de custos
+
+SaaS - Software como serviço
+    Hospedagem 
+    Provedor gerencia tudo
+
+    Acesso Web 
+    Qualquer dispositivo, internet
+
+    Multi-renant
+    Uma instância, multiplus clientes
+
+    Assinatura
+    Custos previsiveis, flexível 
+
+Faas - Função como serviço (Serverless)
+
+    Código
+    Desenvolvedor: doca no Código
+
+    Orientado a eventos
+    Funções ativadas pro triggers
+
+    Escalabilidade
+    Automática, de zero demanda
+
+    Custo Otimizado
+    Paga apenas pelo tempo de execução
+
+***Comparativo e escolhas estratégicas
+
+IaaS 
+    Máxima flexibilidade e gerenciamento interno
+
+PaaS
+    Facilita desenvolvimento e menos flexibilidade
+
+SaaS
+    Mínimo esforço e personalização limitada
+
+FaaS
+    Executa funções e ideal para eventos
+
+Quando utilizar cada Modelos
+IaaS 
+    Controle total, migração de apps, Ex: Setor financeiro
+
+PaaS
+    Foco no desenvolvimento. Ex: Apps web, microsserviços
+
+SaaS
+    Ferramentas prontas para uso. Ex: CRM, e-mail.
+
+FaaS
+    Cargas orientadas a eventos. Ex: Processamento de dados
+
