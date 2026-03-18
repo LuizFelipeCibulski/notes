@@ -176,3 +176,70 @@ SaaS
 FaaS
     Cargas orientadas a eventos. Ex: Processamento de dados
 
+*** Ecossistema da nuvem ***
+Datacenter -> regiões -> zonas de disponibilidade (AZS)
+
+Regiões vs Zona de disponibilidade
+
+Região 
+    Área geográfica independente
+    Tolerância a falhas em larga escala 
+    Baixa latência entre zonas
+    Regionais
+
+Zona de disponibilidade
+    Local isolado dentro de uma região 
+    Isolamento de falhas na região 
+    Alta largura de banda dentro da região 
+    Zonais
+
+** Latência de rede: Impacto e Otimização
+    01 O que é latência?
+    Atraso na transmissão de dados
+
+    02 CDNs e POPs
+    Conteúdo mais próximo do usuário
+
+    03 Otimização de roteamento
+    Data centers de borda (Edge)
+
+    04 Minimização do Conteúdo
+    Compressão de arquivos
+
+** Escalabilidade: Vertical vs Horizontal
+
+Escalabilidade vertical 
+    Aumenta capacidade de um servidor existente 
+    Adiciona CPU, RAM, armazenamento
+    Simples, mas com limites físicos.
+    Requer tempo de inatividade
+
+Escalabilidade Horizontal 
+    Adiciona mais máquinas ao sistema
+    Distribui cargas de trabalho
+    Maior flexibilidade e redundância
+    Ideal para ambientes dinâmicos
+
+Mecanismo de Escalabilidade
+    Horizontal 
+        auto-scaling
+            Adiciona ou remove instâncias 
+        
+        Load Balancer
+            Distribui requisições de forma eficiente
+
+        Elasticidade
+            Recursos prvisionados automaticamente
+
+Alta disponibilidade (HA)
+    Garantindo uptime
+
+    Métricas de HA
+    SLIs, SLOs e SLAs 
+
+    Sistemas redundantes 
+    Replicação de dados, multi-região e redundância
+
+    Failover automático
+    Ativo-Passivo e Ativo-Ativo
+
