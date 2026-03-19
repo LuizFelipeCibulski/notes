@@ -243,3 +243,183 @@ Alta disponibilidade (HA)
     Failover automático
     Ativo-Passivo e Ativo-Ativo
 
+Resiliência: Recuperação de falhas
+    Prevenção de falhas, proteção contra falhas em cascata
+    Padrão circuit breaker, impede operações que provavelmente falharão
+    Autocura, permite recupração sem sobrecarga
+
+Tolerância a falhas e estratégias de Replicação
+    Replicação de dados, Cópias em múltiplos locais
+    Replicação de componentes, duplicação de serviços
+    Operação continua, sistema funcionando sem interrupção
+
+Computação de borda: Edge computing
+    01 Processamento Local
+    02 Latência
+    03 Largura de banda
+    04 Sinergia com IOT 
+
+Service LevelObjectives (SLOs): São metas internas que uma equipe se propõe a alcançar, baseadas nos SLIs.
+Exemplos: "Nossa API terá 99.95% de disponbilidade medida mensalmente", ou "99.99% das chamadas de API serão concluídas em menos de 300ms".
+SLOs fornecem metas claras e mensuráveis para a equipe e ajudam a priorizar o trabalho, permitindo que as equipes inovem dentro de um "orçamento de errros" predefinido.
+
+Service level Agreements (SLAs): São promessas formais feitas aos clientes, frequentemente com penalidades se o compromisso não for cumprido. Exemplos incluem "O serviço estará disponível 99.9% do tempo
+medindo trimestralmente". SLAs são mais conservadores que os SLOs, oferecendo uma margem de segurança entre as metas internas e os compromissos externos.
+
+"As arquiteturas de alta disponibilidade são construídas sobre princípios de redundância e mecanismos de failover, garantindo que o sistema permaneça operacional mesmo em caso de falhas."
+
+Comparativo estratégico provedores de nuvem 
+    01 Ofertas 
+    IaaS, PaaS, SaaS, Amplitude e profundidadde dos serviços 
+
+    02 Presença global
+    Regições e Zonas de Disponibilidade (AZs)
+
+    03 Custo
+    Precificação e custo total de propriedade (TCO)
+
+    Suporte
+    Acordos de nível de serviço (SLAs) e suporte técnico 
+
+    Conformidade
+    Certificações e adesão a padrões regulatórios
+
+    Ferramentas
+    Facilidade de uso, automção e integração
+
+AWS 
+    Produndidade e Maturidade dos serviços
+    Ecossistema e comunidade
+    Infraestrutura global
+    Liderança em automação e DevOps
+
+Azure
+    Domínio do Ambiente Híbrido
+    Integração nativa como  o ecossistema microsoft 
+    Vantagem em Licenciamento
+    Foco estratégico em IA generativa
+
+GCP
+    Liderança em Big Data e Analystics
+    Pioneirismo em Contêines e Kubernetes
+    Rede Global privada de alta performance
+    Precificação amigável e transparente
+
+OCI     
+    Performance superior e previsível
+    Melhor ambiente para Oracle database
+    Previsibilidade e eficiência de custos
+    Segurança por padrão (security-first)
+
+Estratégias multicloud
+    Vantagens e desafios 
+
+    Vantagens/benefícios 
+        Flexibilidade e Escalabilidade
+        Resiliência aprimorada
+        Otimização de custos
+        Mitigação de riscos 
+
+    Desafios
+        Complexidade de gerenciamento
+        Segurança consistente
+        Integração de Software
+        Custos ocultos 
+
+Gestão do risco de vendor lock-in 
+    Avalie serviços, pesquisa rigorosa e prova de conceito 
+    Portabilidade de dados, formatos comaptíveis, backups internos
+    Multicloud/híbrida, reduz dependência de único fornecedor
+
+
+*** Elementos de arquiteturas cloud *** 
+
+Componentes essenciais 
+    redes virtuais, A espinha dorsal que conecta todos os recursos da sua infraestrtura
+    Armazenamento, A base para guardar e gerenciar seus dados de forma segura e acessível 
+    computação, O cérebro da nuvem, onde o processamento de dados acontece
+
+Computação:
+    Máquinas virtuais (vms)
+    Contêiners
+    Funções serverless
+
+Armazenamento:
+    Object storage
+    Block storage
+    File storage
+
+Redes Virtuais:
+    01 vpc (Virtual private Cloud), Rede virtual isolada para recursos; Ambiente seguro e conectivo; Configurações globais
+    02 sub-redes, componentes regionais de VPCs; Intervalor de IPs definidos; Suporte a alta disponibilidade
+    03 Roteamento; Define o caminho dos dados; Comunicação interna e externa; Rotas dinâmicas
+    04 Gateways; Pontos de entrada/saída de tráfego; Internet, VPN e interconexão; Flexibilidade e segurança
+
+Dados 
+    Disponibilidade; Acesso contínuo aos dados
+    Consistência; DDados corretos e íntegros
+    Durabilidade; Garantia de persistência 
+
+Banco de dados
+    SQL (RELACIONAIS)
+    Estrtura rígida, transações ACID
+    EX: PostgreSQL, MySQL, SQL Server 
+
+    NoSQL ( Não relacionais )
+    Flexibilidade, escalabilidade horizontal. Ex: MongoDB, Cassandra, Redis
+
+    Data warehousing
+    Otimizado para análise e relatórios. Ex: Snowflake, Amazon Redshift
+
+Balanceadores 
+    Camada 4 (l4) 
+    Tráfego bruto, baixa latência; 
+    TCP, UDP, etc;
+
+    Camada 7 (l7)
+    Roteamento inteligente;
+    HTTP, cookies, URLs
+
+    Algoritmos estáticos
+    Round-robin, Hash IP; Regras fixas
+
+    Algoritmos dinâmicos
+    Conexão mínima, tempo de resposta;
+    Otimiza desempenho.
+
+Serviço gerenciados na nuvem 
+    Os serviços gerenciados transferem a responsabilidade da gestão da infraestrutura para o provedor de nuvem, liberando as organizações para focarem em inovação .
+
+    - Economia de custos;
+    - Escalabilidade on-demand;
+    - Segurança aprimorada;
+    - Alta disponibilidade;
+    - Foco no negócio principal.
+
+Cloud Native 
+    microsserviços, serviços pequenos e independetes
+
+    contêineres, empacotamento isolado de aplicações
+
+    infraestrtura imutável, Servidores provisionados, não atualizados
+
+    apis, comunicação padronizada entre serviços 
+
+Well-Architected 
+    Sustentabilidade
+    otimização de custos
+    eficiência de performance 
+    confiabilidade
+    segunrança 
+    exelência operacional
+
+Performance
+    Caching: reduz latência
+    CDNs: entrega de conteúdo rápida
+    Experiência do usuário fluida
+
+Segurança 
+    Menor privilégio: Permissões mínimas
+    Defesa em profundidade: múltiplas camadas 
+    Secure by design: segurança proativa
+
