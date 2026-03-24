@@ -423,3 +423,163 @@ Segurança
     Defesa em profundidade: múltiplas camadas 
     Secure by design: segurança proativa
 
+As Funções serverless representam o ápice da abstração na computação em nuvem
+
+** Segurança, Custos e boas práticas
+
+Boas práticas
+    Reponsabilidade compartilhada, divisões de responsabilidade entre provedores e clientes.
+
+    Ferramentas de segurança, IAM, Criptografia, MFA, VPC e VPNs
+
+    Otimização de custos, Estratégias para controlar despesas.
+
+    Melhores práticas, arquiteturas eficientes, seguras e econômicas.
+
+
+Aplicação na prática 
+    Fundamentos de segurança ( resposabilidade compartilhada e identidade)
+    Mecanismos de proteção (Criptografia, MFA e Redes Seguras)
+    Gestão de custos (FinOps e Governança de nuvem)
+    Melhores práticas (well-Architected Framework)
+
+Segurança em nuvem 
+    Panorama de ameaças ( ameaças cibernétocas em evolução )
+    Responsabiidade compartilhada (divisão clara entre provedor e cliente)
+    Gerenciamento de identidade ( autenticação, autorização e controle de acesso)
+
+
+Panorama das ameaças 
+
+    Violação de dados (ataques sofistiados e perda de informações sensíveis)
+    Acessos não autorizados (permissões inadequadas e fahas na autenticação)
+    Configurações (Erros podem levar a vioçações cibernéticas)
+
+Modelo de responsabilidade  compartilhada
+    Provedor de nuvem
+        Ifraestrutura física
+        Redes
+        Hardware e software base
+        Serviços de computação
+    
+    cliente
+        Dados e aplicações 
+        Configuração da Rede
+        Sistema operacional
+        Gerenciamento de acesso 
+
+Mecanismos de proteção em nuvem
+    01 criptografia 
+    Em trânsito (TLS/SSL)
+    Em repouso (KMS)
+
+    02 Autenticação multifator
+    Prevenção de violaçoes de identidade
+    Padrão FIDO2 mais robusto
+
+    03 Segurança de rede 
+    VPCs, NSGs/ Firewalls
+    WAF, VPNs, Direct Connect
+
+Criptografia em trânsito : TLS/SSL
+    Conexões seguras (comunicação entre cliente e servidor, prevenindo interceptações)
+    Dados em movimento (Garante informações transmitidas permaneçam confidenciais)
+    Navegação segura (Essencial para sites, APIs e aplicações que trafegam dados sensíveis)
+
+Criptografia em repouso: KMS
+    Key Management Service ( KMS )
+
+    Gere e gerencie chaves criotigráficas 
+    Controle de acesso rigoroso às chaves
+    Integração com serviços de armazenamento
+
+Como o MFA Fortalece a segurança
+    O que você sabe ( Senha ou PIN)
+    O que você tem (Token físico, aplicativo autenticador, celular (SMS))
+    Quem é você (Biometria (impressão digital, reconhecimento facial))
+
+Segurança de rede 
+
+    01 VPCs/ sub-redes ( Isolamento lógico da sua infraestrutura na nuvem)
+
+    02 NSGs/ Firewalls ( controle de tráfego de entrada e saída filtrando conexões indesejadas)
+
+    03 WAF ( WEB APPLICATION FIREWALL)
+    Protege aplicações web contra ataques comuns (SQLi, XSS)
+
+    02 VPNs/ Direct Connect
+    Conexões seguras e privadas entre sua rede on-premise e a nuvem
+
+
+*** Custos ***
+
+Complexibilidade e custos 
+
+    Crescimento exponencial ( Uso da nuvem aumenta, assim como as despesas)
+    Falta de visiilidade ( Dificuldade em rastrear e alocar gastos)
+    Recursos ociosos (Pagamento por serviços não utilizados)
+
+Finops: A ponte entre finanças e TI
+
+    Cultura colaborativa ( Finanças e TI juntos para gerenciar custos da nuvem em tempo real)
+    Visibilidade total (Entenda onde e como seus recursos da nuvem estão sendo gastos)
+    Otimização contínua ( processos e automação para maximizar o valor da nuvem )
+
+Gestão inteligente de custos 
+
+    Visibilidade (indentificação de recursos e gastos) 
+    Otimização (instâncias spot reservadas) 
+    Alertas (Monitoramento de orçamentos)
+    Automação (Processos contínuos de otimização) 
+
+Governança da nuvem
+    Tagging ( Categorização de recursos)
+    Políticas (Diretrizes operacionais)
+    Automação (Aplicação consistente)
+    Auditoria (Monitoramento contínuo)
+
+Governança na prática
+    Papéis e reponsabilidades  ( As principais funções e suas responsabilidades na nuvem)
+    Ferramentas de automação ( Use IaC ( Infraestrtutura como Código) e CI/CD)
+    Educação e treinamento ( Capacite equipes para as melhores práticas)
+    Revisções periódicas ( Adapte políticas às necessidades em constante mudança)
+
+*** Well-architected Framework: o que é? 
+
+Um conjjunto de melhores prátics e prioncípios para projetar e perar sistemas eficientes, seguros, resilientes e econômicos na nuvem
+
+    Excelência operacional ( Suporte efetivo ao desenvolvimento)
+    Segurança ( proteção de dados e sistemas)
+    Confiabilidade (consistência nas operações)
+    Eficiência de performance ( Uso otimizado de recursos)
+    Otimização de custos ( Valor máximo ao menor preço)
+    Sustentabilidade ( Minimização do impacto ambiental)
+
+Excelência operacional 
+    Infraestrtura como código (IAC)
+    Observabilidade
+    Gerenciamento de mudança
+    Automação de rotinas
+
+Segurança 
+    Gestão de identidade e acesso (IAM)
+    Segurança em todas as camadas
+    Proteção de dados em rrepouso e em trânsito
+    Respostas a incidentes de segurança
+
+Confiabilidade  
+    Recuperação de desastres ( Planejamento para Recuperação rápida)
+    Tolerância a falhas ( Arquiteturas resilientes)
+    Escalabilidade ( Adaptação à demanda)
+
+Aplicação prática e trade-offs
+    Equilibrio entre pilares 
+        Segurança vs Performance
+        Custo vs Confiabilidade
+        Automação vs custo inicial
+
+    Revisões periódicas
+        Revisões trimestrais
+        Acompanhamento de novas tecnologias
+        Feedback dos times 
+
