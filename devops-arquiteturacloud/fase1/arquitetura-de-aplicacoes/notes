@@ -1,0 +1,42 @@
+*** Arquitetura de aplicações 
+** Entender a arquitetura monolítica.
+
+Um unico build. uma unica aplicação para subir ela 
+
+Unico deploy, toda a carga todos os trabalhos em um unico build
+
+Microsserviços, eles são uma abordagem arquitetural que divide uma apicação em um conjunto de serviços pequenos, independentes e focados em uma única tarefa ou funcionalidade
+
+Ao contrário da arquitetura monolítica (onde todos os componentes estão interligdos e dependem uns dos outros), os microsserviços permitem que cada parte da aplicação evolua e se mantenha de forma isolada.
+
+A arquitetura monolítica refere-se a um design de software onde todos os componentes de uma aplicação são interligados em uma única unidade
+
+Isso significa que o front-end, back-end, lófica de negócio, integração com o banco de dados e outros ódulos coexistem no mesmo bloco de código e são implantados como uma única entidade
+
+Unidade coesa: a aplicação é uma unidade única e coesa. Todos os componentes estão interligados, o que significa que uma única alteração em qualquer módulo exige a recomplicação e reimplantação de toda a aplicação
+
+Dependências fortes: todos os módulos da aplicação dependem uns dos outros. Uma falha em um componente pode afetar todo o sistema.
+
+Dificuldade em escalar: Se uma parte específica da aplicação precisar de mais recursos, é necessário escalar toda a aplicação, o que pode resultar em desperdício de recursos
+
+Ciclo de desenovlumento lento: Como toda a aplicação é um grande bloco de código, qualquer mudança pode introduzir riscos e exigir testes extensivos. 
+
+Manutenção complexa: à medida que a aplicação cresce, a manutenção torna-se mais difícil. 
+
+Características principais dos microsserviços:
+    Autonomia: cada microsserviço é independente e responsável por uma unica função da aplicação
+    Desenvolvimento descentralizado: equipes podem trabalhar em diferentes microsserviços, de forma isolada, usando diferentes liguagens ou tecnologias.
+    Escalabilidade: apenas os serviços que necessitam de mais recursos são escalados, otimizando a utilização de infraestrutura.
+    Comunicação via APi: os microsserviços geralmente se comunicam por meio de APIs, como: REST, GraphQl, RPC ( Remote Procedure Call) ou por mensageria
+
+Desafios na aplicação de microsservicos:
+    Complexidade: Comunicação entre diferentes partes do sistema e a coordenação desses serviços exigem mais atenção
+    Desenvolvimento e testes: As ferramentas disponíveis nem sempre são adequadas para lidar com dependências de múltiplos serviços, o que pode dificultar a refatoração e os testes, especialmente em ambientes de desenvolvimento rápido.
+    Governança Decentralizada: A liberdade entre equipes pode causar problemas na manuteção e integração, é importante definir diretrizes comuns sem limitar excessimanete a liberdade das equipes 
+    Latência e comunicação entre serviços
+    Consistência de dados: Cada serviço gerencia seu proprio dado, podendo dificultar a consistência entre eles 
+    Gerenciamento: O sucesso do mirosserviços depende de uma cultura sólida de DevOps.
+    Controle de Versão: uma atualização em um serviço não deve quebrar os demais que dele dependem.
+    Competências da equipe: Equipe qualificada para lidar com o ambiente mais complexo
+
+*** Microsserviços
