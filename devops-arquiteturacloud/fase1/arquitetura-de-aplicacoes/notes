@@ -40,3 +40,21 @@ Desafios na aplicação de microsservicos:
     Competências da equipe: Equipe qualificada para lidar com o ambiente mais complexo
 
 *** Microsserviços
+    Eles são uma abordagem arquitetônica e organizacional para desenvolvimento, em que o software é composto de pequienos serviços independentes que se comunicam por meiop de APIs
+    Esses serviços, chamados de "micro", são autônomos e podem ser desenvolvidos, implantados e escalados independemente.
+
+    Comunicação 
+        Em uma arquitetura monolito, os componentes se comunicam entre si por meio das camadas do projeto
+        Ja nos microsservicos a comunicação passa a ser através de um protocolo como o HTTP ou AMQP
+        Não existe uma solução de comunicação unica entre os microsserviços, Dependendo do protocolo pode ser sync ou async
+
+    Vantagens 
+        Autonomia: Cada microsserviço é independente e responsável por uma única função da aplicação.
+        Desenvolvimento descentralizado: Equipes podem trabalhar em diferentes microsserviços de forma isolada, usando diferentes linguagens ou tecnologias.
+        Escalabilidade: Apenas os serviços que necessitam de mais recursos são escalados, otimizando a utilização de infraestrutura.
+
+    Desafios
+        Governança Descentralizada: Pode gerar desafios de padronização.
+        Consistência de dados: Gerar dificuldade para garantir consistência entre eles.
+
+    
