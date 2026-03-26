@@ -1,0 +1,24 @@
+*** Introdução a AWS
+    IAM e segurança básica 
+        O que é IAM
+        Gerenciamento de usuários e permissões
+        Segurança desde o início
+
+    Criando um usuário IAM
+        Nome e tipo de acesso
+        Permisções com grupos e políticas
+        Download das credenciais
+        Dicas de segurança
+    Boas práticas de segurança 
+        Tags para organização e rastreio
+        Políticas de senha forte e obrigatoriedade de MFS
+        Verificando estado da segurança no IAM Dashboard
+        Revisar permissções periodicamente
+        Preincípo de menor privilégio
+        Separar usuários por grupos de acesso (admin, dev, ops)
+    Regiões e Zonas de Disponibilidade
+        1. Como escolher uma região 
+        2. Diferenças de preço 
+        3. Isolamento de recursos.
+
+    
