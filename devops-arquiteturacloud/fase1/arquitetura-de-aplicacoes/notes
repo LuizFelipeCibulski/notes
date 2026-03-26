@@ -57,4 +57,40 @@ Desafios na aplicação de microsservicos:
         Governança Descentralizada: Pode gerar desafios de padronização.
         Consistência de dados: Gerar dificuldade para garantir consistência entre eles.
 
+Como construir um microsserviço?
+    Definir claramente os limites 
+    Cada serviço tem que ter somente uma responsabilidade
+
+    SRP ( Single Responsibility Principle) aplicado à arquitetura de software.
+
+
+Banco de dados no microsserviço
+    Os bancos de dados em arquiteturas de microsserviços apresentam desafios únicos em termos de persistência de dados. Diferente das arquiteturas monilíticas, onde um único banco de dados pode ser usado para toda a aplicação, cada microsserviço deve ter seu próprio banco de dados.
+
+    Autonomia, escalabilidade 
+
+    Desafios mais comumns:
+        Consistência dos dados 
+            Monolíto a consistenência pode ser garantida de forma mais direta através de transações ACID (Atomicidade, Consistência, Isolamento, Durabilidade)
+            Microsserviços, a garantia de consistência forte pode comprometer a disponibilidade e a escalabilidade do sistema.
+
+        Transações em multiplos serviços
+            Realizar transações que envolvem múltiplos serviços requer coordenação complexa. Um modelo comum é o de transações distrivuídas, onde uma transação abrange vários serviços diferentes. Um exemplo disso é a abordagem de sagas.
+
+SQL X NoSQL
+    Bancos de dados SQL tendem a priorizar consistência e disponibilidade, o que os torna adequados para sistemas que exigem transações ACID
+    Já os bancos de dados NoSQL são projetados para tolerar partições e, portanto, frequentemente priorizam disponibilidade e particionamento, aceitando a consistência eventual.
+
+Cache 
+    Hot cache vs Cold cache
+
+Teorema CAP
+
+
+Comunicação:
+    Comunicação torna-se um aspecto crucial do design e implementação
+    A forma que eles iteragem determina a performance, a escalabilidade e a resiliência do sistema.
+    Sincrona e Asincrona
+
     
+
