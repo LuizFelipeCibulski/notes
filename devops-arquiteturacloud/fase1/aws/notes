@@ -21,4 +21,56 @@
         2. Diferenças de preço 
         3. Isolamento de recursos.
 
+*** IAM ***
+    O que é IAM 
+        Políticas e acessos com IAM
+
+    Criação Usuários IAM
+        Acesso cli + console;
+        Download das credenciais com segurança
+    
+    Grupo
+        Importante para controle global de usuarios 
+    
+    MFA 
+        Segurança reforlada no login;
+
+    Políticas de acesso
+        políticas em formato Json;
+        Acesso controlado por ação, recurso e condição;
+        Seguir o princípio do menor privilégio
+    
+    Acesso: s3:GetObject;
+    Bucket: meu-bucket-financeiro;
+    
+    Bloquio de ação! 
+
+    IAM role 
+        Permissões temporárias para serviços;
+        Não vinculada a um usuário.
+        Trust Policy + Permission Policy
+
+*** redes com vpcs
+
+    Criar uma PVC personalizada
+    Definir CIDR e zonas de Disponibilidade
+    Separar sub-redes públicas e privadas;
+
+    IGW (Internet gateway)
+    Dar acesso a internet a rede publica 
+
+    Nat gateway
+        Criar NAT gateway
+        Permite saída para internet com segurança
+
+    Endpoints, flow, logs e validação da rede  
+        Comunicação privada com AWS
+        Evitar tráfego pela internet públicas
+        VPC Endpoints
+    
+*** Ec2
+    Computação em núvem
+
+    VM na aws
+
     
