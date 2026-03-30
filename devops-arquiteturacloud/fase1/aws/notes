@@ -73,5 +73,47 @@
 
     VM na aws
 
-    
 
+
+*** ECS E EKS
+    O que são containers?
+        Isolamento de aplicações
+        Portabilidade entre ambientes   
+        Execução leve e rápida
+        Compartilhamento do kernel com o host
+
+    Containers vs Máquinas virtuais 
+        VMs: cada instância roda seu próprio SO;
+        Containers: compartilham o kernel, consomem menos recursos
+        Mais agilidade no ciclo de desenvolvimento 
+    
+    Docker
+        Conceiro de imagem e containers
+        Docker hub: repositório público e privado
+        Utilização nas tasks do ECS
+    
+    ECS
+        Orquestrador de containers da AWS 
+        Suporte nativo ao Docker
+        Gerenciamento, simples e integrado com IAM, CloudWatch, ELB;
+        Dois modos: EC2 e Fargate
+
+    Fargate 
+        Sem servidores para gerenciar
+        Escalabilidade automática
+        Cobrança por uso de CPU e memória
+        Alta segurança com isolamento por tasks
+    
+***Conceitos do Kubernetes
+    Pod 
+    Deployment
+    Service
+    Ingress
+
+    Boas práticas
+        RBAC e namespaces para controle de acesso
+        Network Policies para segurança 
+        Helm e Argocd Para automação
+        Prometheus e Grafana para observabilidade
+
+    
