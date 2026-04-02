@@ -116,4 +116,38 @@
         Helm e Argocd Para automação
         Prometheus e Grafana para observabilidade
 
-    
+** Banco de dados
+    Banco de dados relacionais:
+        Uma das principais características desses bancos é a ênfase na consistência dos dados,
+        frequentemente mais valorizada do que a Disponibilidade
+        Transações em banco de dados relacionais seguem o princípio ACID, automicidade, consistência, isolamento e durabilidade
+        Atomacidade: garante que todas as operações de uma transação sejam concluídas com sucesso ou, em caso de falha, a transação seja revertida completamente.
+        Consistência: assegura que o banco de dados permaneça em um estado válido antes e depois da transação
+        Isolamento: significa que cada transação ocorre de forma independente, sem interferência de outras transações em andamento.
+        Durabilidade: garante que os dados gravados em uma transação sejam preservados mesmo em caso de falhas no sistema
+
+    Banco de dados não relacionais:
+        Oferecendo maior flexibilidade na modelagem e armazenamento dos dados
+        Sugiram para atender demandas de exalabilidade horizontal e flexibilidade de estrutura
+        Chave-valor, documentos, colunas e grafos.
+
+    RDS (Relational database service)
+        Solução da AWS que permite utilizar banco de dados relacionais na nuvem sem precisar se preocupar com provisionamento, autilização, backup e manutenção da infra-estrutura.
+        Vatanges é a possibilidade de configurar backups automáticos, snapshots manuais e até mesmo mecanismos de recuperação pontual.
+        Escalar verticalmente (mais CPU e memória) ou horizontalmente (com réplicas de leitura) de forma simples.
+        RDS tem limitações em cenários nos quais se exige performance extrema e latência muito baixa, como aplicações que precisam de resposta em milissegundos em grande escala.
+        Atenção a alocação de IOPs, escalabilidade e monitoramento de conexções
+
+    Amazon Aurora
+        Banco compatível com MySQL e PostgresSQL, projetado pela própria AWS para oferecer alta performance, disponibilidade e escalabilidade  
+        O aurora separa o armazenamento do processamento. Armazenamento distribuiído é altamente tolerante a falhas, sendo replicado automaticamente em seis cópias distrivuídas em três zonas de disponibilidade.
+        Escalar rapidamente, com suporte automárico à adição de réplicas de leitura.
+        15 replicas com balancemaneto de carga.
+        O aurora é distribuído em um volume virtual que se estende automaticamente de 10GB até 128TB, sem a necessidade de provisionamento prévio.
+    Amazon DynamoDB 
+        Serviço NoSQL da AWS voltado para aplicações que exigem escalabilidade massiva, baixa latência e alta disponbilidade.
+        Baseado em chave-valor.
+        Muito utilizado por sistemas que precisam responder de forma imediata, como serviços de recomendação, marketplaces, jogos online e aplicações móveis com grande número de acessos simultâneos
+        DynamoDB é o modelo serverlees: não é necessário se preocupar com provisionamento de instâncias, configurações de escalabilidade ou mesmo backups. AWS gerencia tudo por trás dos bastidores e você paga apenas pelo que consome.   
+        DAX (aceleração com cache em memória). Strams para processamento de eventos em tempo real e Global Tables para replicação multi-região
+        
