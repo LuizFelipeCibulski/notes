@@ -151,3 +151,24 @@
         DynamoDB é o modelo serverlees: não é necessário se preocupar com provisionamento de instâncias, configurações de escalabilidade ou mesmo backups. AWS gerencia tudo por trás dos bastidores e você paga apenas pelo que consome.   
         DAX (aceleração com cache em memória). Strams para processamento de eventos em tempo real e Global Tables para replicação multi-região
         
+***Serverless
+    Lambda
+        Executar sob demanda, sem servidores
+        Escala automática
+        Ideal para eventos e microsserviços
+        Automação de serviços 
+        Failback de sistemas
+
+    API Gateway
+        API Gateway conecta HTTP -> Lambda
+        REST, HTTP, WebSocket
+        Escolha: HTTP API (mais simples)
+
+    
+***Monitoramento
+    Detecção precoce de falhas
+    Automação de respostas
+    Escalabilidade baseada em eventos
+    Suporte à análise de desempenho
+
+    
