@@ -1,0 +1,64 @@
+## Introdução à containers
+
+- Deploy sem containers:
+    Configurar a máquina ( hardware ou virtual )
+    Instalar sistema operacional
+    Configurar o Java runtime
+    Configurar o servidor de aplicação (tomcat,jboss)
+    Instalar dependências, organizar pastas, configura logs...
+    Preparar o build
+    Upload do .jar
+    Testar, corrigir diferenças de ambiente
+
+O que é docker
+    É uma tecnologia baseada em containers, uma ferramenta poderosa para criar e gerenciar ambientes isolados de execução.
+    É uma unidade padronizada de software que inclui o nódigo da aplicação e todas as dependências necessárias para sua execução
+    Exemplo: uma aplicação em .NET Core junto com o runtime do .NET Core
+    Garenta o mesmo comportamento da aplicação!
+    É um "pacote" completo da sua aplicação 
+        Ele inclui o código, as bibliotecas e toda o ambiente necessário para funcionar
+    Funciona do mesmo jeito em qualquer lugar
+        Você desenvolve no seu computador e ele roda exatamente igual no servidor ou na máquina de outra pessoa
+    Leve e isolado
+        Containers compartiilham o sistema operacional, mas mantêm o ambiente da aplicação separado, de forma segura e eficiente.
+    Permite rodar várias aplicações ao mesmo tempo
+        Cada container pode ter sua própia aplicação, sem conflito com os outros. Mesmo usando linguagens ou versões diferentes
+    Facil de criar, apagar e reiniciar
+        Se der erro, você remove e recria o container rapidamente. Ideal para testes e ajustes rápidos
+    Serve para todas as etapas: dev, teste e produção
+        O que você desenvolve local pode  se enviado para produção sem surpresas, com a mesma configuração.
+
+O que está por trás dos containers Docker? 
+    namespaces e cgroups 
+    Namespaces -> Eles garantem que o que acontece dentro de um container fique isolado dos outros processos no sistema
+        O que ele isola:
+            Processos (PID);
+            Sistema de arquivos (mount);
+            Rede (network);
+            Usuários (user);
+            Nomes de host (UTS);
+            IPC (comunicação entre processos).
+    Cgroups
+        Controla o acesso ao hardware
+    
+Vantagens 
+    Deploy mais rápido
+    Escala horizontal facilitada
+    Consumo menor de recursos
+    Portabilidade entre ambiente
+
+## Imagens e Containers
+    O que é? 
+        Uma imagem é o ponto de partida:
+            É um pacote com tudo o que a aplicação precisa;
+            Inclui código, dependências e instruções;
+            Usada para gerar containers.
+
+        Imagem = receita com ingredientes e instruções.
+        Container = prato pronto seguindo a receita.
+
+        Dockerfile -> docker build -> docker image -> docker run -> container
+
+        Imagens são a base dos containers
+        Sabendo como usá-las, ganhamos velocidade e controle;
+

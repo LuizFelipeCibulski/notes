@@ -171,4 +171,67 @@
     Escalabilidade baseada em eventos
     Suporte à análise de desempenho
 
+***S3 
+    Nome único e região apropriada
+    Desativar bloqueio de acesso público
+    Estrutura preparada para site estático
+
+    
+    Não usar política pública em produção;
+    Recomendação: usar CloudFront
+    Proteção e rastreabilidade com IAM e logs
+
+***CloudFront  
+    Rede glocal de entrega de contúdo(CDN)
+    Reduz latência
+    HTTPS, cache, integração com S3, ALB, etc.
+
+    Configurar TTL(cache)
+    Escolher compressão e protocolos;
+    Habilitar HTTPS com certificado da AWS 
+
+    Ideal para sites, assets e mídias.
+
+***Load Balancer
+    Distribui automaticamente o tráfego entre múltiplas instâncias EC2
+    Aumenta a disponbilidade e tolerância a falhas
+    Verificação de saúde (health checks) para direcionar tráfego apenas para instâncias saudáveis;
+    Suporte a balancemaneto regiona/global com integração ao Route 53 e CloudFront
+    SSL/TLS centralizado no Load Balancer, simplificando segurança
+    Integração com Auto Scaling, permitindo criação/remoção automática de instâncias
+
+    Application Load Balancer (ALB):
+        Ideal para HTTP/HTTPS
+        Suporta regras por URL, headers, host, etc.
+        Integração direta com containers, Lambda e WebSocket
+
+    Network Load Balancer(NLB)
+        Baixa latência, ideal para TCP/UDP
+        Resistente e rápido para tráfego de rede intenso
+
+***Secrets 
+    Riscos de deixar senhas no código
+    Necessidade de controle, auditoria e Proteção
+    Centralização e automação com AWS Secrets Manager
+
+*** AWS WAF
+    Web Application Firewall
+    Protege aplicações contra ameaças na camada 7 (HTTP/HTTPS)
+    Bloqueia ataques como:
+    Sql Injection (SQLi)
+    Cross-Site Scripting (XSS)
+    Bots e scanners
+    
+    Regras gerenciadas pela AWS 
+        Atualizadas automaticamente
+        Cobrem ameaças comuns (OWASP top 10)
+    Regras personalidas:
+        Definidas por IP, cabeçalho, corpo e método 
+        Bloqueio por geolocalização, tamanho de payload ou padrão
+
+***ACM 
+    https = criptografia ponta a ponta; Validação de identidade e confiança; Segurança para APIs e sites.
+    Gerenciamento de certificados SSL/TLS
+    Tipos: público (gratuito) e privado (via CA privada)
+    Renovação automática e integração com serviços AWS 
     
