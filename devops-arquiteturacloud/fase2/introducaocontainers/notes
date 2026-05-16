@@ -62,3 +62,32 @@ Vantagens
         Imagens são a base dos containers
         Sabendo como usá-las, ganhamos velocidade e controle;
 
+## Dockerfile e build de Imagens
+    Um Dockerfile é um arquivo de texto com instruições para construir imagem Docker
+    Cada linha define uma etapa da construção do ambiente.
+    Por que usar um dockerfile?
+        Automatiza a criação de ambientes
+        Garante reprodutibilidade
+        Facilita atualizações e manutenção 
+        Ajuda a padronizar ambientes em equipe
+    
+    Docker build 
+        Comando usado para construir uma imagem a partir de um Dockerfile
+        O ponto (".") representa o diretório atual onde está o Dockerfile
+        Cada instrução no Dockerfile gera uma nova camada
+        O docker armazena em cache cada camada para acelerar rebuilds
+    Otimização
+        Use COPY com arquivos essenciais primeiro para aproveitar melhor o cache
+        ```
+        FROM node:22-alpine
+        WORKDIR /app
+        COPY package.json .
+        RUN npm install
+        # agora temos cache da instalação das dependências
+        COPY . .
+        CMD ["node", "server.js"]
+    O Docker reutiliza camadas anteriores sempre que possível 
+    Mudanças em uma camada invalidam as seguintes
+    Ordem das instruções importa para o aproveitamento de cache
+
+    
