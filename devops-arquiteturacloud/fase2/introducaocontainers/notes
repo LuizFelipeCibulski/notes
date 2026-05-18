@@ -90,4 +90,52 @@ Vantagens
     Mudanças em uma camada invalidam as seguintes
     Ordem das instruções importa para o aproveitamento de cache
 
-    
+** Volumes e redes
+    Onde estão os dados do container?
+        Dados gerados em tempo de execução somem quando o container é destruído
+        Exemplo clássico: banco de dados rodando em container sem volume 
+        Problema: ao reiniciar, tude se perde
+        Precisamos de persisntência
+    O que é um volume no Docker?
+        Um volume é uma área de armazenamento gerenciado pelo Docker
+        Fica fora do ciclo de vida do container
+        Ideal para armazenar dados importantes e persistentes
+        Compartilhado entre containers, se precisar
+    Usando Volumes
+        Volume é gerenciado pelo Docker e ideal para produção 
+        Armazena dados fora do ciclo de vida do container
+        O volume mysql-data garante que os dados sobrevivam ao container
+    Usando bind mounts 
+        Bind mount conecta um diretório real do host ao container
+        É mais flexível mas tem riscos de segurança e Portabilidade
+        Os dados ficam na pasta ./dados do host
+    Usando tmpfs (RAM)
+        tmpfs monta um diretório diretamente na RAM
+        Ideal para dados temporários e ultra rápidos
+        Todos os dados somem ao reiniciar o container
+    Volumes resolvem o problema da persisntência
+        Container não foi feito para durar
+        Volume garante que seus dados sim 
+        Essa separação é essencial para produção e para ambientes escaláveis
+    O que são redes docker?
+        Permitem a comunicação entre containers
+        Podem isolar serviços, melhorar performance e segurança;
+        Cada container pode estar em uma ou mais redes
+    Rede do tipo bridge (padrão)
+        Conecta containers no mesmo host com DNS interno
+        Isola serviços e permite comunicação entre eles via nome 
+    Quando utilizar bridge
+        Ideal para aplicações multicontainer no mesmo host
+        Exemplos: app + banco de dados comunicando por nome do container
+    Rede do tipo host
+        O container compartilha diretamente a rede do host
+        Sem NAT, menor latência, mas menos isolamento
+    Quando usar Host?
+        Útil quando você precisa de máxima performance de rede
+        Exemplos: monitoramento, métricas ou proxies   
+    Rede do tipo none
+        Container sem acesso a nenhuma rede
+        Ideal para testes de segurança ou execução isolada
+    Quando usar none?
+        Para aplicações ou testes que não precisam de conexão externa
+        Exemplos: Ferramentas de benchmark ou containers em sandbox (totalmente isolados) 
