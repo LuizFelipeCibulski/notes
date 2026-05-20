@@ -139,3 +139,126 @@ Vantagens
     Quando usar none?
         Para aplicações ou testes que não precisam de conexão externa
         Exemplos: Ferramentas de benchmark ou containers em sandbox (totalmente isolados) 
+
+** Docker compose
+    Ferramenta que permite definir e ferenciar múltiplos containers com um único arquivo
+    usa YAML para descrever serviços, volumes, redes e dependências;
+    Ideal para ambientes locais de senvolvimento e testes;
+    Simplifica o start, stop e rebuild de ambientes completos com poucos comandos;
+
+    Por que usar?
+        Centraliza a configuração de todos os serviços
+        Reduz a complexidade do setup local
+        Facilita a colaboração entre devs 
+        Ideal para microsserviços e aplicações multicontainer 
+
+    Healthcheck
+        Permite definir como e quando o Docker verificará se um container está saudável
+        Importante para garantir que dependências estejam prontas antes de iniciar outros serviços
+    
+    Definir a ordem de inicialização dos containers
+    Não espera o container estar "pronto", apenas iniciado
+    Permite que containers se comuniquem pelo nome de serviço (hostname)
+    Evita conflitos de rede e melhora o isolamento entre ambientes
+    Persistem dados fora do ciclo de vida dos containers
+    Podemos usar Compose para buildar e rodar imagens locais com base em um Dockerfile
+    
+** Boas práticas, segurança e troubleshooting
+    Evitam dores de cabeça em produção
+    Tornam a manutenção mais simples
+    Melhoram segurança e performance
+
+    Imagens enxutas e seguras
+        Evite latest, use versões fixas
+        Prefira imagens minimalistas
+        Use .dockerignore para evitar arquivos desnecessários
+    Multi-stage builds
+        Separe a fase de build da execução final
+        Reduz o tamanho da imagem
+    Limitação de recursos 
+        Ajuda a evitar travamentos e consumo excessivo
+    Organização dos projetos 
+        Estrutura consistente e que facilita a manutenção
+    Menos é mais 
+        Cada container deve ter uma única responsabilidade 
+        Evite containers "canivete suíco"
+** Por que uma boa segurança importa? 
+    Containers são isolados, mas não são invulneráveis;
+    Um container mal configurado pode expor sua máquina ou infraestrutura
+    Segurança começa desde a construção da imagem até a execução em produção
+    Princípios básicos
+        Evite latest, use versões fixas;
+        Prefira imagens minimalistas (ex: alpine);
+        Use .dockerignore para evitar arquivos desnecessários
+    Riscos comuns
+        uso de imagens desatualizadas ou vulneráveis;
+        Permissões excessivas (ex: uso de root);
+        Exposição indevida de volumes ou portas;
+        Falta de controle de rede e comunicação entre containers;
+    Análise de vulnerabilidades
+        Ferramentas como "docker scan" , "Trivy", "clair" e "Snyk" ajudam na identificação de pacotes inseguros;
+        Use scanners localmente e também no CI/CD;
+        docker scan minha-imagem:latest
+    Evite root
+        Crie usuários específicos no Dockerfile:
+            RUN adduser --system --no-create-home appuser;
+            No docker-compose.yml, evite usar privileged: true ou montar o /var/run/docker.sock sem necessidade
+        Limitando permições
+            Use --cap-drop para reduzir permissões: 
+                docker run --cap-dsrop=ALL minha-imagem;
+                Utilize read-only para montar volumes que não precisam de escrita;
+                Sempre que possível, prefira secrets em vez de variáveis de ambiente para informações sensíveis
+            Cuidando do ambiente de produção 
+                Habilite logging estruturado e centralizado;
+                Configure limites de CPU/memória para containers;
+                Automatize atualizações dfe imagens seguras com CI/CD
+                Segregue redes containers por função (ex.: frontend/backend)
+        Ferramentas de Apoio 
+            "Trivy": scanner rápido e leve;
+            "Snyk": integração com CI/CD;
+            "Docker Bench for Security": checklist de boas práticas;
+            "Falco": monitoramento em tempo real 
+        Checklist de segurança 
+            Imagem oficial e atualizada?
+            Execução com usuário restrito?
+            Volumes com permissões adequadas?
+            Variáveis sensíveis expostas? 
+            Logs e métricas configurados? 
+    Por que aprender troubleshooting?
+        Saber diagnosticar problemas é essencial em produção;
+        Evitar perda de tempo com tentativas e erros;
+        Ajuda a manter o sistema estável e confiável;
+    Problemas comuns    
+        Container que não sobe ou que para imediatamente;
+        falha de comunicação entre containers;
+        Permissões e volumes mal configurados;
+        variáveis de ambiente ausentes ou incorretas;
+    Docker logs
+        Mostra a saída do processos principal do container;
+        docker logs meu-container
+        Use com -f para acomapnhar em tempo real 
+        Ideal para ver erros de aplicação, exceptions, etc
+    Docker inspect
+        Mostra informações detalhadas sobre container;
+        docker inspect meu-container;
+        Bom para conferir variáveis de ambiente, configurações de rede, mounts e muito mais
+    Docker exec 
+        Executa comandos dentro do container ativo
+        docker eec -it meu-container bash;
+        ùtil para investigar arquivos, proceessos e configurações em tempo real;
+    Problemas comuns 
+        Container termina imediatamente:
+            Comando principal termina;
+            Tente rodar um shell para testar;
+        Erro de porta em uso: 
+            Verifique com docker ps e ajuste as configurações
+        Permissão negada em volumes:
+            Ajuste permissões ou use chown dentro do container
+        Comunicação falhando:
+            Verifique se estão na memsa rede e se os nomes dos containers estão corretos
+        Dicas & truques:
+            Use nomes de containers descritivos;
+            Organize volumes, redes e imagens com clareza;
+            Documente soluções para problemas recorrentes;
+            Explore docker compose logs, top, stats.
+        
